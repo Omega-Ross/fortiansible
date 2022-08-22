@@ -1,0 +1,17 @@
+---
+
+
+- name: "Pull device list from NetBox"
+  hosts: localhost
+  tasks:
+  # query a list of devices
+  - name: Obtain list of devices from NetBox
+    netbox.netbox.nb_lookup:
+    debug:
+      msg: >
+        "Device {{ item.value.display_name }} (ID: {{ item.key }}) was
+         manufactured by {{ item.value.device_type.manufacturer.name }}"
+    loop: "{{ query('netbox.netbox.nb_lookup', 'devices',
+                    api_endpoint='http://172.20.255.103:8000/dcim/devices/',
+                    api_filter='role=Security Router'),
+                    token='0e2529465e62415750456a5e01d0ec7484d160ce') }}"

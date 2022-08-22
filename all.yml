@@ -1,0 +1,11 @@
+---
+site_list:
+  - name: “test”
+    status: Active
+manufacturers:  # In alphabetical order
+  - Fortinet
+device_types:
+  - model: “FortiGate VM64”
+    manufacturer: “Fortinet”
+    slug: “fortigate-vm64”
+    Full_depth: True
