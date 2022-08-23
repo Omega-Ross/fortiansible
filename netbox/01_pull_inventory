@@ -2,6 +2,7 @@
   - name: Pull Devices From Netbox
     hosts: localhost
     connection: local
+    gather_facts: no
     environment:
     vars:
       netbox_url: http://172.20.255.103:8000
