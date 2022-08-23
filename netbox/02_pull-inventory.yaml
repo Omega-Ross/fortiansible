@@ -1,0 +1,7 @@
+---
+plugin: netbox.netbox.nb_inventory
+api_endpoint: http://172.20.255.103:8000
+token: 0e2529465e62415750456a5e01d0ec7484d160ce
+validate_certs: false
+group_by:
+  - tenant
