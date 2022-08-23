@@ -22,3 +22,5 @@
           validate_certs: false
         register: netbox_devices
         run_once: yes
+      - debug:
+          var: netbox_devices

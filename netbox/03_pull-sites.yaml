@@ -22,3 +22,5 @@
           validate_certs: false
         register: netbox_sites
         run_once: yes
+      - debug:
+          var: netbox_sites
