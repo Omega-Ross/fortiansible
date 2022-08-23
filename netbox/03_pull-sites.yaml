@@ -1,5 +1,5 @@
 ---
-  - name: Pull Devices From Netbox
+  - name: Pull Sites From Netbox
     hosts: localhost
     connection: local
     gather_facts: no
@@ -7,11 +7,11 @@
     vars:
       netbox_url: http://172.20.255.103:8000
       netbox_token: 0e2529465e62415750456a5e01d0ec7484d160ce
-    ### Query list of devices ###
+    ### Query list of sites ###
     tasks:
-      - name: Get Devices
+      - name: Get Sites
         uri:
-          url: "{{ netbox_url }}/api/dcim/devices/"
+          url: "{{ netbox_url }}/api/dcim/sites/"
           method: GET
           headers:
             Authorization: "Token {{ netbox_token }}"
@@ -20,5 +20,5 @@
           body_format: json
           status_code: [200, 201]
           validate_certs: false
-        register: netbox_devices
+        register: netbox_sites
         run_once: yes
